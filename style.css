@@ -1,0 +1,139 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 100px;
+  background-color: rgb(85, 82, 81);
+}
+
+/* menu */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: #a8a8a8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.nav .logo h1 {
+  font-weight: 600;
+  font-family: sans-serif;
+  color: rgb(106, 217, 236);
+}
+
+.nav .logo b {
+  color: white;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav ul li {
+  margin-right: 30px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 251, 251);
+  font-weight: 500;
+  font-family: sans-serif;
+  font-size: 17px;
+}
+
+/* input */
+
+input {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signin {
+  background: transparent;
+  border: none;
+}
+
+.signup {
+  background-color: rgb(168, 207, 224);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+/* content */
+
+.content {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: 30px;
+  margin-top: 120px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* content text */
+
+.content .content-left {
+  display: block;
+  width: 100%;
+}
+
+.content .content-left .info {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .content-left .info h2 {
+  font-size: 60px;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+  color: bisque;
+}
+
+.content .content-left .info p {
+  font-size: 23px;
+  line-height: 2pc;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+  color: white;
+}
+
+/* content button */
+
+.content .content-left button {
+  padding: 10px 23px;
+  background-color: rgb(168, 207, 224);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* content image */
+
+.content .content-right {
+  display: block;
+  width: 100%;
+}
+
+.content .content-right img {
+  width: 400px;
+  height: auto;
+  position: relative;
+}

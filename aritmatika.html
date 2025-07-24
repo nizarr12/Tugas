@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Aritmatika</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #90caf9;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #2c2c2c;
+      color: white;
+    }
+
+    button {
+      background-color: #42a5f5;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #1e88e5;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #2c2c2c;
+      border-radius: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>Kalkulator Aritmatika</h2>
+    <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+    <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+    
+    <select id="operator">
+      <option value="tambah">Penjumlahan (+)</option>
+      <option value="kurang">Pengurangan (-)</option>
+      <option value="kali">Perkalian (×)</option>
+      <option value="bagi">Pembagian (/)</option>
+      <option value="modulus">Modulus (%)</option>
+    </select>
+    
+    <button onclick="hitung()">Hitung</button>
+
+    <div id="result">Hasil akan muncul di sini</div>
+  </div>
+
+  <script>
+    function hitung() {
+      const angka1 = parseFloat(document.getElementById('angka1').value);
+      const angka2 = parseFloat(document.getElementById('angka2').value);
+      const operator = document.getElementById('operator').value;
+      const result = document.getElementById('result');
+
+      if (isNaN(angka1) || isNaN(angka2)) {
+        result.innerHTML = "Masukkan kedua angka dengan benar!";
+        return;
+      }
+
+      let hasil;
+      switch (operator) {
+        case 'tambah':
+          hasil = angka1 + angka2;
+          break;
+        case 'kurang':
+          hasil = angka1 - angka2;
+          break;
+        case 'kali':
+          hasil = angka1 * angka2;
+          break;
+        case 'bagi':
+          hasil = angka2 !== 0 ? angka1 / angka2 : "Tidak bisa dibagi nol!";
+          break;
+        case 'modulus':
+          hasil = angka2 !== 0 ? angka1 % angka2 : "Tidak bisa modulus nol!";
+          break;
+        default:
+          hasil = "Operasi tidak dikenali.";
+      }
+
+      result.innerHTML = "Hasil: " + hasil;
+    }
+  </script>
+
+</body>
+</html>
